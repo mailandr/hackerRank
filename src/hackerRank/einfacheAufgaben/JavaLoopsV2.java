@@ -1,4 +1,4 @@
-package hackerRank.hackerRank;
+package hackerRank.einfacheAufgaben;
 
 public class JavaLoopsV2 {
 

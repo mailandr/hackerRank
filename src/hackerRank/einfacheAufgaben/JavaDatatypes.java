@@ -1,4 +1,4 @@
-package hackerRank.hackerRank;
+package hackerRank.einfacheAufgaben;
 
 public class JavaDatatypes {
     public static void main(String[] args) {
