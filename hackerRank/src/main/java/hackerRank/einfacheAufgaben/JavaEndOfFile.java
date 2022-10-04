@@ -15,6 +15,7 @@ public class JavaEndOfFile {
         } while (sc.hasNextLine());
 
 
+
 //        //funktioniert auch:
 
 //
