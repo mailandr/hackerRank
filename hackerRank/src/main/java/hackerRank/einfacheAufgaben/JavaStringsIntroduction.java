@@ -27,6 +27,13 @@ public class JavaStringsIntroduction {
         B = B.substring(0, 1).toUpperCase() + B.substring(1).toLowerCase();
 
         System.out.println(A + " " + B);
+        String text = "milan";
+        //char[] text2 = text.toCharArray();
+
+
+        text = text.substring(0,3).toUpperCase() + text.substring(3).toLowerCase();
+
+        System.out.println(text);
 
 
     }

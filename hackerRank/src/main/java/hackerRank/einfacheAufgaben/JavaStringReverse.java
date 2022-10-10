@@ -18,7 +18,6 @@ public class JavaStringReverse {
         }
 
     }
-
     public static int retrunOnOff(char[] abfrage) {
         int count = 0;
         for (int i = 0; i < abfrage.length / 2; i++) {
