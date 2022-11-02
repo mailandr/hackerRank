@@ -3,7 +3,7 @@ package hackerRank.einfacheAufgaben;
 import java.util.Scanner;
 import java.math.BigInteger;
 
-public class BigNumber {
+public class JavaBigNumber {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
