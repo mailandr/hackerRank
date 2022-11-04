@@ -1,6 +1,7 @@
 package hackerRank.einfacheAufgaben.JavaSort;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -42,6 +43,29 @@ public class JavaSort {
     }
 
     public static void sortList(List<Student> liste) {
+
+        //liste.sort(Comparator.comparingDouble(Student::getCgpa));
+
+        //Collections.sort(liste); <--- funzt nicht weil Student Klasse Comparable nicht überschreibt
+
+
+//        Alternative mit Comparator:
+//        liste.sort(new Comparator<Student>() {
+//            @Override
+//            public int compare(Student o1, Student o2) {
+//                int comparison = Double.compare(o1.getCgpa(), o2.getCgpa());
+//                if(comparison != 0) {
+//                    return comparison;
+//                }
+//
+//                comparison = o1.getFname().compareTo(o2.getFname());
+//                if(comparison != 0) {
+//                    return comparison;
+//                }
+//
+//                return Integer.compare(o1.getId(), o2.getId());
+//            }
+//        });
 
         liste.sort((o1, o2) -> (int) ((o2.getCgpa() * 1000) - (o1.getCgpa() * 1000)));
 

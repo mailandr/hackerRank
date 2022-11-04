@@ -2,7 +2,9 @@ package hackerRank.einfacheAufgaben.JavaSort;
 
 import java.util.*;
 
+//class Student implements Comparable<Student> { // implementiert Comparable
 class Student {
+
     private int id;
     private String fname;
     private double cgpa;
@@ -25,6 +27,17 @@ class Student {
     public double getCgpa() {
         return cgpa;
     }
+
+//    Überschreibt die compareTo Methode:
+//    @Override
+//    public int compareTo(Student o) {
+//        return Comparator
+//                .comparingDouble(Student::getCgpa)
+//                .reversed()
+//                .thenComparing(Student::getFname)
+//                .thenComparingInt(Student::getId)
+//                .compare(this, o);
+//    }
 }
 
 
