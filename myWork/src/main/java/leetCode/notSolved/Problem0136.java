@@ -1,5 +1,8 @@
 package leetCode.notSolved;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Problem0136 {
     public static void main(String[] args) {
         //int[] nums = {2, 2, 1};
@@ -17,37 +20,14 @@ public class Problem0136 {
         if (nums.length == 1) {
             return nums[0];
         }
-        int sumL = 0;
-        int sumR = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (i < nums.length / 2) {
-                sumL += nums[i];
-            } else if (i > nums.length / 2) {
-                sumR += nums[i];
-            }
-        }
-        if (sumL - sumR == 0) {
-            return nums[nums.length / 2];
-        }
-        if (sumL % 2 == 0 && sumR % 2 == 0) {
-            if (sumL > sumR) {
-                return (sumL - sumR) + nums[nums.length / 2];
+        List<Integer> list = new ArrayList<>();
+        for (int num : nums) {
+            if (list.contains(num)) {
+                list.remove(num);
             } else {
-                return (sumR - sumL) + nums[nums.length / 2];
+                list.add(num);
             }
         }
-        if (sumL > sumR && sumL > nums[nums.length / 2]) {
-            return sumL - nums[nums.length / 2];
-        }
-        if (sumL > sumR && sumL < nums[nums.length / 2]) {
-            return nums[nums.length / 2] - sumL;
-        }
-        if (sumR > sumL && sumR > nums[nums.length / 2]) {
-            return sumR - nums[nums.length / 2];
-        }
-        //if (sumR > sumL && sumR < nums[nums.length / 2]) {
-            return nums[nums.length / 2] - sumR;
-        //}
-        //return 150;
+        return list.get(0);
     }
 }
