@@ -1,4 +1,4 @@
-package leetCode.notSolved;
+package leetCode.solved;
 
 import java.util.Arrays;
 
