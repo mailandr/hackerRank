@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        background-color: black;
+    }
+</style>
+
+<body>
+    Symbol Value
+    I 1
+    V 5
+    X 10
+    L 50
+    C 100
+    D 500
+    M 1000
+
+    I can be placed before V (5) and X (10) to make 4 and 9.
+    X can be placed before L (50) and C (100) to make 40 and 90.
+    C can be placed before D (500) and M (1000) to make 400 and 900.
+
+    Input: s = "MCMXCIV"
+    Output: 1994
+    Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+
+</body>
+<script>
+    let s = "MCMXCIV"
+
+    romanToInt(s);
+
+    function romanToInt(s) {
+        var valArr = { 'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000, 'IV': -2, 'IX': -2, 'XL': -20, 'XC': -20, 'CD': -200, 'CM': -200 };
+
+        let stringArr = s.split('');
+        let regex = /IV|IX|XL|XC|CD|CM/g;
+        const negArr = [...s.matchAll(regex)];
+        let sum = 0;
+        for (let i = 0; i < stringArr.length; i++) {
+            sum += valArr[stringArr[i]];
+        }
+
+        for (let i = 0; i < negArr.length; i++) {
+            sum += valArr[negArr[i]];
+        }
+        return sum;
+
+        //other solution:
+
+        // const sym = {
+        //     'I': 1,
+        //     'V': 5,
+        //     'X': 10,
+        //     'L': 50,
+        //     'C': 100,
+        //     'D': 500,
+        //     'M': 1000
+        // }
+
+        // let result = 0;
+
+        // for (let i = 0; i < s.length; i++) {
+        //     const cur = sym[s[i]];
+        //     const next = sym[s[i + 1]];
+
+        //     if (cur < next) {
+        //         result += next - cur;
+        //         i++;
+        //     } else {
+        //         result += cur;
+        //     }
+        // }
+
+        // return result;
+    }
+
+</script>
+
+</html>
